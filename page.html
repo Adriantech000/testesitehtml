@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <div><label>Email</label></div>
+        <input type="email" name="email" onchange="valideFields()" id="email" placeholder="Digite seu email"/>
+    </div>
+    <div>
+        <div><label>Senha</label></div>
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha"/>
+    </div>
+    <div>
+        <button type="button" class="clear" onclick="validaremail(); validarSenha()">Enviar</button>
+    </div>
+    <p id="resultadoEmail"></p>
+    <p id="resultadoSenha"></p>
+    
+</body>
+
+<style>
+    body {
+    background-image: url(Blue-Powerpoint-Background-Pics.jpg);
+    background-size: cover; /* Faz a imagem cobrir a tela inteira */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-attachment: fixed; /* Faz com que a imagem de fundo não role com a página */
+    background-position: center;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+   }
+   input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+   }
+   button {
+    padding: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+   }
+   button:active {
+    opacity: 70%;
+   }
+   
+   .clear {
+    background-color: rgb(146, 204, 240);
+    border-radius: 5px;
+   }
+</style>
+
+<script>
+    function validaremail(){
+
+        var emailEsperado = "lipe@gmail.com"
+        var senhaEsperada = "1234"
+        var emailDigitado = document.getElementById('email').value;
+        var senhaDigitada = document.getElementById('senha').value
+
+        if (emailDigitado === emailEsperado && senhaDigitada === senhaEsperada){
+            document.getElementById('resultadoEmail').innerText = "Login correto"
+            document.getElementById('resultadoEmail').style.color = 'green'
+        }
+    
+        else {
+            document.getElementById('resultadoEmail').innerText = 'Login incorreto.';
+            document.getElementById('resultadoEmail').style.color = 'red';
+        }
+    }
+    
+</script>
+</html>
